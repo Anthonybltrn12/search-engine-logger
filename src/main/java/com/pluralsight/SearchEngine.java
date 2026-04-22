@@ -20,7 +20,7 @@ public class SearchEngine {
             //create file writer
             FileWriter fileWriter = new FileWriter("src/main/resources/logs.txt");
             BufferedWriter buffWriter = new BufferedWriter(fileWriter);
-
+            //giving title to log
             buffWriter.write("User Action Log\n");
             //seeing if user started app
             if(userLaunch.equalsIgnoreCase("x")){
