@@ -26,7 +26,24 @@ public class SearchEngine {
                 LocalDateTime now = LocalDateTime.now();
                 DateTimeFormatter fmt = DateTimeFormatter.ofPattern("MM-dd-yyyy  HH:mm:ss");
                 String formattedLog = now.format(fmt);
-                buffWriter.write( formattedLog + " Launched");
+                buffWriter.write( formattedLog + " Launched \n");
+
+
+                for(int i = 0; userLaunch != null; i++){
+                    System.out.println("What are you looking for?(Press X to exit):");
+                    String userSearch = theScanner.nextLine();
+                    LocalDateTime searchTime = LocalDateTime.now();
+                    //DateTimeFormatter fmt = DateTimeFormatter.ofPattern("MM-dd-yyyy  HH:mm:ss");
+                    String formattedSearch = searchTime.format(fmt);
+                    buffWriter.write(formattedSearch + " " + userSearch + "\n");
+                    if(userSearch.equalsIgnoreCase("x")){
+                        System.out.println("Bye!");
+                        buffWriter.write(formattedSearch + " exit");
+                        break;
+                    }
+                }
+
+
             }
 
             buffWriter.close();
